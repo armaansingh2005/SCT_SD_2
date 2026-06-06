@@ -1,0 +1,199 @@
+:root{
+    --primary:#4facfe;
+    --secondary:#00f2fe;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+}
+
+.container{
+    width:100%;
+    max-width:500px;
+}
+
+.game-card{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+    animation:fadeIn .8s ease;
+}
+
+h1{
+    color:white;
+}
+
+.subtitle{
+    color:white;
+    margin-top:10px;
+}
+
+.number-icon{
+    font-size:70px;
+    margin:20px 0;
+
+    animation:float 2s infinite ease-in-out;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+#guessBtn{
+    background:#00c853;
+    color:white;
+}
+
+#restartBtn{
+    margin-top:15px;
+    background:#ff5722;
+    color:white;
+}
+
+button:hover{
+    transform:translateY(-3px);
+}
+
+.message{
+    margin-top:20px;
+    font-size:22px;
+    color:white;
+    font-weight:bold;
+    min-height:40px;
+}
+
+.stats{
+    margin-top:20px;
+}
+
+.stat-card{
+    background:rgba(255,255,255,.15);
+    padding:15px;
+    border-radius:15px;
+    color:white;
+}
+
+.stat-card h2{
+    margin-top:5px;
+}
+
+.correct{
+    animation:success .8s ease;
+}
+
+.shake{
+    animation:shake .4s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@keyframes shake{
+    0%,100%{
+        transform:translateX(0);
+    }
+    20%{
+        transform:translateX(-10px);
+    }
+    40%{
+        transform:translateX(10px);
+    }
+    60%{
+        transform:translateX(-10px);
+    }
+    80%{
+        transform:translateX(10px);
+    }
+}
+
+@keyframes success{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:500px){
+
+    .game-card{
+        padding:20px;
+    }
+
+    .number-icon{
+        font-size:55px;
+    }
+
+    .message{
+        font-size:18px;
+    }
+}
